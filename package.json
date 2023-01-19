@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/Augmar/frontend-project-44#readme",
   "dependencies": {
-    "makefile": "^0.0.2"
+    "makefile": "^0.0.2",
+    "node": "^19.4.0",
+    "readline-sync": "^1.4.10"
   }
 }
