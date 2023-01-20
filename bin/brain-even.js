@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 import { getName, greetings, getAnswer, isAnswerCorrect, winMessage, loseMessage } from './communication.js';
-import { getRandomInt } from './random.js'
+import { getRandomInt } from './random.js';
+import { getRightAnswer } from './getRightAnswer.js';
 
 let phrase="Welcome to the Brain Games!";
 console.log(phrase);
@@ -10,22 +11,13 @@ const name = getName();
 
 greetings(name);
 
-const isNumEven = (num) => {
-    return num%2 === 0;
-}
-
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 let count = 0;
 
 while (true) {
     let num = getRandomInt(1, 100);
     console.log(`Question: ${num}`);
-    let rightAnswer = '';
-    if (isNumEven(num)) {
-        rightAnswer = 'yes';
-    } else {
-        rightAnswer = 'no';
-    }
+    let rightAnswer = getRightAnswer('even', num)
     let answer = getAnswer();
     if (isAnswerCorrect(answer, rightAnswer)) {
         console.log('Correct!');
