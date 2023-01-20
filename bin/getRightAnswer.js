@@ -24,13 +24,11 @@ const answerForCalc = (a, b, s) => {
 }
 
 const answerForGCD = (a, b) => {
-    console.log(a, b, 'start');
     if (a === 0) {
         return b;
     } else if (b === 0) {
         return a;
     }
-    
     while (b) {
         if (a > b) {
             a = a - b;
@@ -38,7 +36,6 @@ const answerForGCD = (a, b) => {
             b = b - a;
         }
     }
-
     return a;
 }
 
