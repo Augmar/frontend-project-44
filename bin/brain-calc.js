@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import { sign } from 'crypto';
 import { getName, greetings, getAnswer, isAnswerCorrect, winMessage, loseMessage } from './communication.js';
 import { getRandomInt, getRandomSign } from './random.js';
 
@@ -28,12 +27,12 @@ const getRightAnswer = (a, b, sign) => {
 }
 
 while (true) {
-    let a = getRandomInt(1, 100);
-    let b = getRandomInt(1, 100);
+    let a = getRandomInt(1, 10);
+    let b = getRandomInt(1, 10);
     let sign = getRandomSign(['-','+','*']);
     let rightAnswer = getRightAnswer(a, b, sign);
     console.log(`Question: ${a} ${sign} ${b}`)
-    let answer = getAnswer();
+    let answer = Number(getAnswer());
     if (isAnswerCorrect(answer, rightAnswer)) {
         console.log('Correct!');
         count++;
