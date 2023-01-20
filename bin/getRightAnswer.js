@@ -24,13 +24,12 @@ const answerForCalc = (a, b, s) => {
 }
 
 const answerForGCD = (a, b) => {
-    if (a === 0 || b === 0) {
-        return a ? a : b;
-    } 
     while (b) {
-        if (a > b) {
+        if (a === 0) {
+            return b;
+        } else if (a > b) {
             a = a - b;
-        } else {
+        } else if (a < b) {
             b = b - a;
         }
     }
