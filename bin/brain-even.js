@@ -1,23 +1,13 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
-
+import { getName, greetings, getAnswer, isAnswerCorrect, winMessage, loseMessage } from './communication.js';
 
 let phrase="Welcome to the Brain Games!";
 console.log(phrase);
 
-const getName = () => {
-    let name = readlineSync.question('May I have your name? ');
-    return name;
-}
-
 const name = getName();
 
-const greetings = () => {
-    console.log(`Hello, ${name}!`);
-}
-
-greetings();
+greetings(name);
 
 const getRandomInt = (min, max) => {
     min = Math.ceil(min);
@@ -41,16 +31,16 @@ while (true) {
     } else {
         rightAnswer = 'no';
     }
-    let answer = readlineSync.question('Your answer: ');
-    if (answer === rightAnswer) {
+    let answer = getAnswer();
+    if (isAnswerCorrect(answer, rightAnswer)) {
         console.log('Correct!');
         count++;
         if (count === 3) {
-            console.log(`Congratulations, ${name}!`);
+            winMessage(name);
             break;
         }
     } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'\nLet's try again, Bill!`);
+        loseMessage(name, answer, rightAnswer);
         break;
     }
 }
