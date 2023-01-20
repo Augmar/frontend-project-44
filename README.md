@@ -3,3 +3,4 @@
 <a href="https://codeclimate.com/github/Augmar/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/e3d049fff8bfa8c5c927/maintainability" /></a>
 [![asciicast](https://asciinema.org/a/qi39hrHPMMxwnAfmhmX91HMR0.svg)](https://asciinema.org/a/qi39hrHPMMxwnAfmhmX91HMR0)
 [![asciicast](https://asciinema.org/a/1tnto40DlOfrL3BtxuSKyhdJE.svg)](https://asciinema.org/a/1tnto40DlOfrL3BtxuSKyhdJE)
+[![asciicast](https://asciinema.org/a/pXOIjbcVAT3E9PgMHRn9uCW1Q.svg)](https://asciinema.org/a/pXOIjbcVAT3E9PgMHRn9uCW1Q)
