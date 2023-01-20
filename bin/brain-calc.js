@@ -17,9 +17,9 @@ let count = 0;
 while (true) {
     let a = getRandomInt(1, 10);
     let b = getRandomInt(1, 10);
-    let sign = getRandomSign(['-','+','*']);
-    let rightAnswer = getRightAnswer('calc', a, b, sign);
-    console.log(`Question: ${a} ${sign} ${b}`)
+    let s = getRandomSign(['-','+','*']);
+    let rightAnswer = getRightAnswer('calc', a, b, s);
+    console.log(`Question: ${a} ${s} ${b}`)
     let answer = Number(getAnswer());
     if (isAnswerCorrect(answer, rightAnswer)) {
         console.log('Correct!');

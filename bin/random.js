@@ -7,7 +7,8 @@ const getRandomInt = (min, max) => {
 const getRandomSign = (list) => {
     let min = 0;
     let max = list.length;
-    return list[getRandomInt(min, max)];
+    let s = list[getRandomInt(min, max)];
+    return s;
 }
 
 export { getRandomInt, getRandomSign }
