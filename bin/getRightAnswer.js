@@ -29,7 +29,7 @@ const answerForGCD = (a, b) => {
             return b;
         } else if (a > b) {
             a = a - b;
-        } else if (a < b) {
+        } else if (a <= b) {
             b = b - a;
         }
     }
