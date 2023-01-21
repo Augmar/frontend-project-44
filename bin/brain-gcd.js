@@ -2,7 +2,7 @@
 
 import { getName, greetings, getAnswer, isAnswerCorrect, winMessage, loseMessage } from './communication.js';
 import { getRandomInt } from './random.js';
-import { getRightAnswer } from './getRightAnswer.js';
+import { getRightAnswer } from './logic.js';
 
 let phrase="Welcome to the Brain Games!";
 console.log(phrase);
