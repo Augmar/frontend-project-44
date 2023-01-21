@@ -57,6 +57,18 @@ const getRightAnswer = (nameOfGame, arr) => {
     } 
 }
 
+const printProgression = (progression, x) => {
+    let progrForPrint = [];
+        for (let i = 0; i < progression.length - 1; i++) {
+            if (i === x) {
+                progrForPrint.push('..')
+            } else {
+                progrForPrint.push(progression[i])
+            }
+        }
+    console.log(`Question: ${progrForPrint.join(' ')}`)
+}
+
 const gameInit = (nameOfGame) => {
     let arr = [];
     if (nameOfGame === "calc") {
@@ -79,19 +91,10 @@ const gameInit = (nameOfGame) => {
         arr.push(b);
     } else if (nameOfGame === 'progression') {
         let progressionLength = getRandomInt(5, 15);
-        let progr = getRandomProgression(progressionLength);
+        arr = getRandomProgression(progressionLength);
         let x = getRandomInt(1, progressionLength);
-        arr = progr;
         arr.push(x);
-        let progrForPrint = [];
-        for (let i = 0; i < progr.length - 1; i++) {
-            if (i === x) {
-                progrForPrint.push('..')
-            } else {
-                progrForPrint.push(progr[i])
-            }
-        }
-        console.log(`Question: ${progrForPrint.join(' ')}`)
+        printProgression(arr, x);
     }
     return arr;
 }
@@ -117,6 +120,9 @@ const gamePlay = (nameOfGame) => {
             break;
         }
 
+    }
+
+    if (count === 3) {
         winMessage(name);
     }
 }
