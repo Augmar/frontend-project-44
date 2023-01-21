@@ -75,9 +75,7 @@ const gameInit = (nameOfGame) => {
         let a = getRandomInt(1, 50);
         let b = getRandomInt(1, 50);
         let s = getRandomSign(['-','+','*']);
-        arr.push(a);
-        arr.push(b);
-        arr.push(s);
+        arr = [a,b,s];
         console.log(`Question: ${a} ${s} ${b}`)
     } else if (nameOfGame === "even") {
         let a = getRandomInt(1, 100);
@@ -87,8 +85,7 @@ const gameInit = (nameOfGame) => {
         let a = getRandomInt(1, 100);
         let b = getRandomInt(1, 100);
         console.log(`Question: ${a} ${b}`)
-        arr.push(a);
-        arr.push(b);
+        arr = [a, b];
     } else if (nameOfGame === 'progression') {
         let progressionLength = getRandomInt(5, 15);
         arr = getRandomProgression(progressionLength);
