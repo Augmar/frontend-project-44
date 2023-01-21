@@ -11,4 +11,4 @@ const getRandomSign = (list) => {
     return s;
 }
 
-export { getRandomInt, getRandomSign }
+export { getRandomInt, getRandomSign };

@@ -51,33 +51,42 @@ const getRightAnswer = (nameOfGame, a = 0, b = 0, s = '') => {
 
 const gamePlay = (nameOfGame) => {
     let count = 0;
-    let phrase="Welcome to the Brain Games!";
-    console.log(phrase);
+    let welcome="Welcome to the Brain Games!";
+    console.log(welcome);
 
     const name = getName();
 
     greetings(name);
 
-    console.log('What is the result of the expression?');
-    if (nameOfGame === "calc") {
-        while (true) {
-            let a = getRandomInt(1, 10);
-            let b = getRandomInt(1, 10);
-            let s = getRandomSign(['-','+','*']);
-            let rightAnswer = getRightAnswer('calc', a, b, s);
-            console.log(`Question: ${a} ${s} ${b}`)
-            let answer = Number(getAnswer());
-            if (isAnswerCorrect(answer, rightAnswer)) {
-                console.log('Correct!');
-                count++;
-                if (count === 3) {
-                    winMessage(name);
-                    break;
-                }
-            } else {
-                loseMessage(name, answer, rightAnswer);
+    while (true) {
+        let a = 1;
+        let b = 1;
+        let s = '';
+        if (nameOfGame === "calc") {
+            a = getRandomInt(1, 50);
+            b = getRandomInt(1, 50);
+            s = getRandomSign(['-','+','*']);
+            console.log(`What is the result of the expression?\nQuestion: ${a} ${s} ${b}`)
+        } else if (nameOfGame === "even") {
+            a = getRandomInt(1, 100);
+            console.log(`Answer "yes" if the number is even, otherwise answer "no".\nQuestion: ${a}`);
+        } else if (nameOfGame === "gcd") {
+            a = getRandomInt(1, 100);
+            b = getRandomInt(1, 100);
+            console.log(`Find the greatest common divisor of given numbers.\nQuestion: ${a} ${b}`)
+        }
+        let rightAnswer = String(getRightAnswer(nameOfGame, a, b, s));
+        let answer = getAnswer();
+        if (isAnswerCorrect(answer, rightAnswer)) {
+            console.log('Correct!');
+            count++;
+            if (count === 3) {
+                winMessage(name);
                 break;
             }
+        } else {
+            loseMessage(name, answer, rightAnswer);
+            break;
         }
     }
 }
