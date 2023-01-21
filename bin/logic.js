@@ -58,16 +58,15 @@ const gameInit = (nameOfGame) => {
         arr.push(a);
         arr.push(b);
         arr.push(s);
-        console.log(`What is the result of the expression?\nQuestion: ${a} ${s} ${b}`)
+        console.log(`Question: ${a} ${s} ${b}`)
     } else if (nameOfGame === "even") {
         let a = getRandomInt(1, 100);
-        console.log(`Answer "yes" if the number is even, otherwise answer "no".\nQuestion: ${a}`);
-        let arr = [];
+        console.log(`Question: ${a}`);
         arr.push(a);
     } else if (nameOfGame === "gcd") {
         let a = getRandomInt(1, 100);
         let b = getRandomInt(1, 100);
-        console.log(`Find the greatest common divisor of given numbers.\nQuestion: ${a} ${b}`)
+        console.log(`Question: ${a} ${b}`)
         arr.push(a);
         arr.push(b);
     }
@@ -80,23 +79,22 @@ const gamePlay = (nameOfGame) => {
 
     const name = getName();
 
-    greetings(name);
+    greetings(name, nameOfGame);
 
-    while (true) {
-        let arr = gameInit(nameOfGame);
-        let rightAnswer = String(getRightAnswer(nameOfGame, arr[0], arr[1], arr[2]));
+    while (count !== 3) {
+        let arr = [];
+        arr = gameInit(nameOfGame);
+        let rightAnswer = String(getRightAnswer(nameOfGame, Number(arr[0]), Number(arr[1]), arr[2]));
         let answer = getAnswer();
         if (isAnswerCorrect(answer, rightAnswer)) {
             console.log('Correct!');
             count++;
-            if (count === 3) {
-                winMessage(name);
-                break;
-            }
-        } else {
+        }else {
             loseMessage(name, answer, rightAnswer);
             break;
         }
+
+        winMessage(name);
     }
 }
 

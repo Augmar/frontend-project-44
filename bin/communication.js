@@ -5,8 +5,16 @@ const getName = () => {
     return name;
 }
 
-const greetings = (name) => {
-    console.log(`Hello, ${name}!`);
+const greetings = (name, nameOfGame) => {
+    let phrase = '';
+    if (nameOfGame === 'calc') {
+        phrase = 'What is the result of the expression?'
+    } else if (nameOfGame === 'even') {
+        phrase = 'Answer "yes" if the number is even, otherwise answer "no".'
+    } else if (nameOfGame === 'gcd') {
+        phrase = 'Find the greatest common divisor of given numbers.'
+    }
+    console.log(`Hello, ${name}!\n${phrase}`);
 }
 
 const getAnswer = () => {
