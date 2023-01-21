@@ -91,7 +91,7 @@ const gameInit = (nameOfGame) => {
                 progrForPrint.push(progr[i])
             }
         }
-        console.log(`Question: ${progrForPrint}`)
+        console.log(`Question: ${progrForPrint.join(' ')}`)
     }
     return arr;
 }
