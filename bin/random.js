@@ -11,4 +11,16 @@ const getRandomSign = (list) => {
     return s;
 }
 
-export { getRandomInt, getRandomSign };
+const getRandomProgression = (progressionLength) => {
+    let step = getRandomInt(2, 6);
+    let arr = [];
+    let x = getRandomInt(0, 20);
+    for (let i = 0; i < progressionLength; i++) {
+        arr.push(x);
+        x += step;
+    }
+
+    return arr;
+}
+
+export { getRandomInt, getRandomSign, getRandomProgression };

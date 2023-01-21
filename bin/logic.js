@@ -1,5 +1,5 @@
 import { isAnswerCorrect, winMessage, loseMessage, getAnswer, getName, greetings } from "./communication.js";
-import { getRandomInt, getRandomSign } from './random.js';
+import { getRandomInt, getRandomSign, getRandomProgression } from './random.js';
 
 const isNumEven = (num) => {
     return num%2 === 0;
@@ -39,14 +39,22 @@ const answerForGCD = (a, b) => {
     return a;
 }
 
-const getRightAnswer = (nameOfGame, a = 0, b = 0, s = '') => {
+const answerForProgression = (progression) => {
+    let x = progression[progression.length - 1];
+
+    return progression[x];
+}
+
+const getRightAnswer = (nameOfGame, arr) => {
     if (nameOfGame === 'even') {
-        return answerForEven(a);
+        return answerForEven(arr[0]);
     } else if (nameOfGame === 'calc') {
-        return answerForCalc(a, b, s);
+        return answerForCalc(arr[0], arr[1], arr[2]);
     } else if (nameOfGame === 'gcd') {
-        return answerForGCD(a, b);
-    }
+        return answerForGCD(arr[0], arr[1]);
+    } else if (nameOfGame === 'progression') {
+        return answerForProgression(arr);
+    } 
 }
 
 const gameInit = (nameOfGame) => {
@@ -69,6 +77,21 @@ const gameInit = (nameOfGame) => {
         console.log(`Question: ${a} ${b}`)
         arr.push(a);
         arr.push(b);
+    } else if (nameOfGame === 'progression') {
+        let progressionLength = getRandomInt(5, 15);
+        let progr = getRandomProgression(progressionLength);
+        let x = getRandomInt(1, progressionLength);
+        arr = progr;
+        arr.push(x);
+        let progrForPrint = [];
+        for (let i = 0; i < progr.length - 1; i++) {
+            if (i === x) {
+                progrForPrint.push('..')
+            } else {
+                progrForPrint.push(progr[i])
+            }
+        }
+        console.log(`Question: ${progrForPrint}`)
     }
     return arr;
 }
@@ -84,7 +107,7 @@ const gamePlay = (nameOfGame) => {
     while (count !== 3) {
         let arr = [];
         arr = gameInit(nameOfGame);
-        let rightAnswer = String(getRightAnswer(nameOfGame, Number(arr[0]), Number(arr[1]), arr[2]));
+        let rightAnswer = String(getRightAnswer(nameOfGame, arr));
         let answer = getAnswer();
         if (isAnswerCorrect(answer, rightAnswer)) {
             console.log('Correct!');

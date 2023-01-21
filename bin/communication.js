@@ -13,6 +13,8 @@ const greetings = (name, nameOfGame) => {
         phrase = 'Answer "yes" if the number is even, otherwise answer "no".'
     } else if (nameOfGame === 'gcd') {
         phrase = 'Find the greatest common divisor of given numbers.'
+    } else if (nameOfGame === 'gcd') {
+        phrase = 'What number is missing in the progression?'
     }
     console.log(`Hello, ${name}!\n${phrase}`);
 }
