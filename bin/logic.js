@@ -69,29 +69,55 @@ const printProgression = (progression, x) => {
     console.log(`Question: ${progrForPrint.join(' ')}`)
 }
 
+const initCalc = () => {
+    let a = getRandomInt(1, 50);
+    let b = getRandomInt(1, 50);
+    let s = getRandomSign(['-','+','*']);
+    let arr = [a,b,s];
+    console.log(`Question: ${a} ${s} ${b}`)
+    
+    return arr;
+}
+
+const initEven = () => {
+    let a = getRandomInt(1, 100);
+    console.log(`Question: ${a}`);
+    let arr = [];
+    arr.push(a);
+
+    return arr;
+}
+
+const initGCD = () => {
+    let a = getRandomInt(1, 100);
+    let b = getRandomInt(1, 100);
+    console.log(`Question: ${a} ${b}`)
+    let arr = [a, b];
+
+    return arr;
+}
+
+const initProgression = () => {
+    let progressionLength = getRandomInt(5, 15);
+    arr = getRandomProgression(progressionLength);
+    let x = getRandomInt(1, progressionLength);
+    let arr = [];
+    arr = x;
+    printProgression(arr, x);
+
+    return arr;
+}
+
 const gameInit = (nameOfGame) => {
     let arr = [];
     if (nameOfGame === "calc") {
-        let a = getRandomInt(1, 50);
-        let b = getRandomInt(1, 50);
-        let s = getRandomSign(['-','+','*']);
-        arr = [a,b,s];
-        console.log(`Question: ${a} ${s} ${b}`)
+        arr = initCalc();
     } else if (nameOfGame === "even") {
-        let a = getRandomInt(1, 100);
-        console.log(`Question: ${a}`);
-        arr.push(a);
+        arr = initEven();
     } else if (nameOfGame === "gcd") {
-        let a = getRandomInt(1, 100);
-        let b = getRandomInt(1, 100);
-        console.log(`Question: ${a} ${b}`)
-        arr = [a, b];
+        arr = initGCD();
     } else if (nameOfGame === 'progression') {
-        let progressionLength = getRandomInt(5, 15);
-        arr = getRandomProgression(progressionLength);
-        let x = getRandomInt(1, progressionLength);
-        arr.push(x);
-        printProgression(arr, x);
+        arr = initProgression();
     }
     return arr;
 }
