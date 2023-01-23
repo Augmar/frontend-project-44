@@ -45,6 +45,17 @@ const answerForProgression = (progression) => {
     return progression[x];
 }
 
+const answerForPrime = (arr) => {
+    let num = arr[0];
+    for (let i = 2; i <= Math.floor(Math.sqrt(num)); i++) {
+        if (num%i === 0) {
+            return 'no';
+        }
+    }
+
+    return 'yes';
+}
+
 const getRightAnswer = (nameOfGame, arr) => {
     if (nameOfGame === 'even') {
         return answerForEven(arr[0]);
@@ -54,7 +65,9 @@ const getRightAnswer = (nameOfGame, arr) => {
         return answerForGCD(arr[0], arr[1]);
     } else if (nameOfGame === 'progression') {
         return answerForProgression(arr);
-    } 
+    } else if (nameOfGame === 'prime') {
+        return answerForPrime(arr);
+    }
 }
 
 const printProgression = (progression, x) => {
@@ -99,11 +112,19 @@ const initGCD = () => {
 
 const initProgression = () => {
     let progressionLength = getRandomInt(5, 15);
-    arr = getRandomProgression(progressionLength);
+    let arr = getRandomProgression(progressionLength);
     let x = getRandomInt(1, progressionLength);
-    let arr = [];
-    arr = x;
+    arr.push(x);
     printProgression(arr, x);
+
+    return arr;
+}
+
+const initPrime = () => {
+    let num = getRandomInt(5, 84);
+    let arr = [];
+    arr.push(num);
+    console.log(`Question: ${num}`)
 
     return arr;
 }
@@ -118,7 +139,9 @@ const gameInit = (nameOfGame) => {
         arr = initGCD();
     } else if (nameOfGame === 'progression') {
         arr = initProgression();
-    }
+    } else if (nameOfGame === 'prime') {
+        arr = initPrime();
+    } 
     return arr;
 }
 
