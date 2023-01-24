@@ -1,9 +1,7 @@
-import { isAnswerCorrect, winMessage, loseMessage, getAnswer, getName, greetings } from "./communication.js";
+import { isAnswerCorrect, winMessage, loseMessage, getAnswer, getName, greetings } from './communication.js';
 import { getRandomInt, getRandomSign, getRandomProgression } from './random.js';
 
-const isNumEven = (num) => {
-    return num%2 === 0;
-}
+const isNumEven = (num) => num%2 === 0;
 
 const answerForEven = (num) => {
     if (isNumEven(num)) {
@@ -131,11 +129,11 @@ const initPrime = () => {
 
 const gameInit = (nameOfGame) => {
     let arr = [];
-    if (nameOfGame === "calc") {
+    if (nameOfGame === 'calc') {
         arr = initCalc();
-    } else if (nameOfGame === "even") {
+    } else if (nameOfGame === 'even') {
         arr = initEven();
-    } else if (nameOfGame === "gcd") {
+    } else if (nameOfGame === 'gcd') {
         arr = initGCD();
     } else if (nameOfGame === 'progression') {
         arr = initProgression();
@@ -147,7 +145,7 @@ const gameInit = (nameOfGame) => {
 
 const gamePlay = (nameOfGame) => {
     let count = 0;
-    console.log("Welcome to the Brain Games!");
+    console.log('Welcome to the Brain Games!');
 
     const name = getName();
 
