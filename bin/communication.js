@@ -13,7 +13,7 @@ const greetings = (name, nameOfGame) => {
         phrase = 'Answer "yes" if the number is even, otherwise answer "no".'
     } else if (nameOfGame === 'gcd') {
         phrase = 'Find the greatest common divisor of given numbers.'
-    } else if (nameOfGame === 'gcd') {
+    } else if (nameOfGame === 'progression') {
         phrase = 'What number is missing in the progression?'
     } else if (nameOfGame === 'prime') {
         phrase = 'Answer "yes" if given number is prime. Otherwise answer "no".'
