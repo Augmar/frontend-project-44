@@ -15,6 +15,8 @@ const greetings = (name, nameOfGame) => {
         phrase = 'Find the greatest common divisor of given numbers.'
     } else if (nameOfGame === 'gcd') {
         phrase = 'What number is missing in the progression?'
+    } else if (nameOfGame === 'prime') {
+        phrase = 'Answer "yes" if given number is prime. Otherwise answer "no".'
     }
     console.log(`Hello, ${name}!\n${phrase}`);
 }
