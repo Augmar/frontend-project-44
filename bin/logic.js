@@ -5,21 +5,26 @@ const isNumEven = (num) => num%2 === 0;
 
 const answerForEven = (num) => {
     if (isNumEven(num)) {
+
         return 'yes';
-    } else {
-        return 'no';
-    }
+    } 
+
+    return 'no';
 }
 
 const answerForCalc = (a, b, s) => {
     if (s === '+') {
+
         return a + b;
     } else if (s === '-') {
+
         return a - b;
     } else if (s === '*') {
+
         return a * b;
     } else {
         console.log(`Should never work ${s}`)
+
         return s;
     }
 }
@@ -47,6 +52,7 @@ const answerForPrime = (arr) => {
     let num = arr[0];
     for (let i = 2; i <= Math.floor(Math.sqrt(num)); i++) {
         if (num%i === 0) {
+
             return 'no';
         }
     }
@@ -56,14 +62,19 @@ const answerForPrime = (arr) => {
 
 const getRightAnswer = (nameOfGame, arr) => {
     if (nameOfGame === 'even') {
+
         return answerForEven(arr[0]);
     } else if (nameOfGame === 'calc') {
+
         return answerForCalc(arr[0], arr[1], arr[2]);
     } else if (nameOfGame === 'gcd') {
+
         return answerForGCD(arr[0], arr[1]);
     } else if (nameOfGame === 'progression') {
+
         return answerForProgression(arr);
     } else if (nameOfGame === 'prime') {
+
         return answerForPrime(arr);
     }
 }
@@ -72,12 +83,12 @@ const printProgression = (progression, x) => {
     let progrForPrint = [];
         for (let i = 0; i < progression.length - 1; i++) {
             if (i === x) {
-                progrForPrint.push('..')
+                progrForPrint.push('..');
             } else {
-                progrForPrint.push(progression[i])
+                progrForPrint.push(progression[i]);
             }
         }
-    console.log(`Question: ${progrForPrint.join(' ')}`)
+    console.log(`Question: ${progrForPrint.join(' ')}`);
 }
 
 const initCalc = () => {
@@ -85,7 +96,7 @@ const initCalc = () => {
     let b = getRandomInt(1, 50);
     let s = getRandomSign(['-','+','*']);
     let arr = [a,b,s];
-    console.log(`Question: ${a} ${s} ${b}`)
+    console.log(`Question: ${a} ${s} ${b}`);
     
     return arr;
 }
@@ -102,7 +113,7 @@ const initEven = () => {
 const initGCD = () => {
     let a = getRandomInt(1, 100);
     let b = getRandomInt(1, 100);
-    console.log(`Question: ${a} ${b}`)
+    console.log(`Question: ${a} ${b}`);
     let arr = [a, b];
 
     return arr;
@@ -122,7 +133,7 @@ const initPrime = () => {
     let num = getRandomInt(5, 84);
     let arr = [];
     arr.push(num);
-    console.log(`Question: ${num}`)
+    console.log(`Question: ${num}`);
 
     return arr;
 }
@@ -158,7 +169,7 @@ const gamePlay = (nameOfGame) => {
         let answer = getAnswer();
         if (isAnswerCorrect(answer, rightAnswer)) {
             console.log('Correct!');
-            count++;
+            count=count+1;
         }else {
             loseMessage(name, answer, rightAnswer);
             break;
