@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { gamePlay } from './logic.js';
 
-gamePlay('calc');
+import startBrainCalc from '../src/games/2-calc-game.js';
+
+startBrainCalc();

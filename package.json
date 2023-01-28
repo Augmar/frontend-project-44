@@ -2,20 +2,20 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/Augmar/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Augmar/frontend-project-44/actions)",
-  "main": "index.js",
+  "description": "Mind Games is a set of five console games based on popular mobile brain training apps.", 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Augmar/frontend-project-44.git"
+    "url": "git+https://github.com/dmitry1178/frontend-project-44.git"
   },
-  "author": "",
+  "author": "Dmitry Nesterov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Augmar/frontend-project-44/issues"
+    "url": "https://github.com/dmitry1178/frontend-project-44/issues"
   },
+  "homepage": "https://github.com/dmitry1178/frontend-project-44#readme",
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
@@ -24,15 +24,12 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
-  "homepage": "https://github.com/Augmar/frontend-project-44#readme",
   "dependencies": {
-    "makefile": "^0.0.2",
-    "node": "^19.4.0",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
-    "eslint": "^8.32.0",
+    "eslint": "^8.30.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.27.5"
+    "eslint-plugin-import": "^2.26.0"
   }
 }

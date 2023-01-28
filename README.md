@@ -1,6 +1,9 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/Augmar/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Augmar/frontend-project-44/actions)
-<a href="https://codeclimate.com/github/Augmar/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/e3d049fff8bfa8c5c927/maintainability" /></a>
+[![Actions Status](https://github.com/dmitry1178/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/dmitry1178/frontend-project-44/actions)
+
+### CodeClimate status:
+[![Maintainability](https://api.codeclimate.com/v1/badges/280f87e773ed8fbb106b/maintainability)](https://codeclimate.com/github/dmitry1178/frontend-project-44/maintainability)
+
 # Brain-games
 What it is?
 Mind Games is a set of five console games based on popular mobile brain training apps. Each game asks questions that need to be answered correctly. After three correct answers, the game is considered to be completed. Wrong answers end the game and offer to play it again.
@@ -28,28 +31,31 @@ You need to determine if the number is even or not.
 ##### Starting the game:
 ``` brain-even ```
 ##### Presentation Asciinema:
-[![asciicast](https://asciinema.org/a/qi39hrHPMMxwnAfmhmX91HMR0.svg)](https://asciinema.org/a/qi39hrHPMMxwnAfmhmX91HMR0)
+[![asciicast](https://asciinema.org/a/552563.svg)](https://asciinema.org/a/552563)
 ***
+
 ### 2. Brain-calc
 You need to calculate the result of adding, subtracting or multiplying two numbers.
 ##### Starting the game:
 ``` brain-calc ```
 ##### Presentation Asciinema:
-[![asciicast](https://asciinema.org/a/1tnto40DlOfrL3BtxuSKyhdJE.svg)](https://asciinema.org/a/1tnto40DlOfrL3BtxuSKyhdJE)
+[![asciicast](https://asciinema.org/a/552568.svg)](https://asciinema.org/a/552568)
 ***
+
 ### 3. Brain-gcd
 You need to determine the common divisor of two numbers.
 ##### Starting the game:
 ``` brain-gcd ```
 ##### Presentation Asciinema:
-[![asciicast](https://asciinema.org/a/pXOIjbcVAT3E9PgMHRn9uCW1Q.svg)](https://asciinema.org/a/pXOIjbcVAT3E9PgMHRn9uCW1Q)
+[![asciicast](https://asciinema.org/a/552570.svg)](https://asciinema.org/a/552570)
 ***
+
 ### 4. Brain-progression
 You need to calculate what number is "hidden" in an arithmetic progression.
 ##### Starting the game:
 ``` brain-progression ```
 ##### Presentation Asciinema:
-[![asciicast](https://asciinema.org/a/SCPuEHTTRC2wSNTRtt4wdWRyD.svg)](https://asciinema.org/a/SCPuEHTTRC2wSNTRtt4wdWRyD)
+[![asciicast](https://asciinema.org/a/552571.svg)](https://asciinema.org/a/552571)
 ***
 
 ### 5. Brain-prime
@@ -57,5 +63,4 @@ You need to determine if a number is prime (divisible only by 1 and itself witho
 ##### Starting the game:
 ``` brain-prime ```
 ##### Presentation Asciinema:
-[![asciicast](https://asciinema.org/a/ZzlY1dbJQsQ9UR1RjaVII8wx5.svg)](https://asciinema.org/a/ZzlY1dbJQsQ9UR1RjaVII8wx5)
-***
+[![asciicast](https://asciinema.org/a/552575.svg)](https://asciinema.org/a/552575)

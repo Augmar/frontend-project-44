@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { gamePlay } from './logic.js';
 
-gamePlay('prime');
+import startBrainPrime from '../src/games/5-prime-game.js';
+
+startBrainPrime();

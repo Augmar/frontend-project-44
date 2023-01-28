@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { gamePlay } from './logic.js';
 
-gamePlay('progression');
+import startBrainProgression from '../src/games/4-progression-game.js';
+
+startBrainProgression();
